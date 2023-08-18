@@ -1,0 +1,246 @@
+[
+    {
+        "label":  "Search",
+        "fields":  [
+                       {
+                           "key":  "searchcontact",
+                           "templateOptions":  {
+                                                   "label":  "Search"
+                                               },
+                           "type":  "input",
+                           "summaryVisibility":  "Show",
+                           "requiresTemplateOptions":  true,
+                           "requiresKey":  true,
+                           "requiresDataSource":  false
+                       },
+                       {
+                           "key":  "selectedcontact",
+                           "templateOptions":  {
+                                                   "label":  "Select contact",
+                                                   "required":  true,
+                                                   "grid":  {
+                                                                "columns":  [
+                                                                                {
+                                                                                    "headerName":  "Emailaddress",
+                                                                                    "field":  "Emailaddress"
+                                                                                },
+                                                                                {
+                                                                                    "headerName":  "Display Name",
+                                                                                    "field":  "DisplayName"
+                                                                                },
+                                                                                {
+                                                                                    "headerName":  "Alias",
+                                                                                    "field":  "Alias"
+                                                                                },
+                                                                                {
+                                                                                    "headerName":  "Name",
+                                                                                    "field":  "Name"
+                                                                                },
+                                                                                {
+                                                                                    "headerName":  "First Name",
+                                                                                    "field":  "FirstName"
+                                                                                },
+                                                                                {
+                                                                                    "headerName":  "Initials",
+                                                                                    "field":  "Initials"
+                                                                                },
+                                                                                {
+                                                                                    "headerName":  "Last Name",
+                                                                                    "field":  "LastName"
+                                                                                }
+                                                                            ],
+                                                                "height":  300,
+                                                                "rowSelection":  "single"
+                                                            },
+                                                   "dataSourceConfig":  {
+                                                                            "dataSourceGuid":  "$dataSourceGuid_0",
+                                                                            "input":  {
+                                                                                          "propertyInputs":  [
+                                                                                                                 {
+                                                                                                                     "propertyName":  "searchvalue",
+                                                                                                                     "otherFieldValue":  {
+                                                                                                                                             "otherFieldKey":  "searchcontact"
+                                                                                                                                         }
+                                                                                                                 }
+                                                                                                             ]
+                                                                                      }
+                                                                        },
+                                                   "useFilter":  true,
+                                                   "useDefault":  false,
+                                                   "searchPlaceHolder":  "Search this data"
+                                               },
+                           "type":  "grid",
+                           "summaryVisibility":  "Show",
+                           "requiresTemplateOptions":  true,
+                           "requiresKey":  true,
+                           "requiresDataSource":  true
+                       }
+                   ]
+    },
+    {
+        "label":  "Edit",
+        "fields":  [
+                       {
+                           "key":  "externalEmailAddress",
+                           "templateOptions":  {
+                                                   "label":  "External Email Address",
+                                                   "required":  true,
+                                                   "useDependOn":  true,
+                                                   "dependOn":  "selectedcontact",
+                                                   "dependOnProperty":  "Emailaddress"
+                                               },
+                           "type":  "input",
+                           "summaryVisibility":  "Show",
+                           "requiresTemplateOptions":  true,
+                           "requiresKey":  true,
+                           "requiresDataSource":  false
+                       },
+                       {
+                           "key":  "emailUniqueInfo",
+                           "templateOptions":  {
+                                                   "label":  "Info",
+                                                   "rows":  3,
+                                                   "placeholder":  "Loading...",
+                                                   "useDataSource":  true,
+                                                   "dataSourceConfig":  {
+                                                                            "dataSourceGuid":  "$dataSourceGuid_1",
+                                                                            "input":  {
+                                                                                          "propertyInputs":  [
+                                                                                                                 {
+                                                                                                                     "propertyName":  "externalemailaddress",
+                                                                                                                     "otherFieldValue":  {
+                                                                                                                                             "otherFieldKey":  "externalEmailAddress"
+                                                                                                                                         }
+                                                                                                                 }
+                                                                                                             ]
+                                                                                      }
+                                                                        },
+                                                   "displayField":  "Result"
+                                               },
+                           "className":  "textarea-resize-vert",
+                           "type":  "textarea",
+                           "summaryVisibility":  "Show",
+                           "requiresTemplateOptions":  true,
+                           "requiresKey":  true,
+                           "requiresDataSource":  false
+                       },
+                       {
+                           "key":  "displayname",
+                           "templateOptions":  {
+                                                   "label":  "Display Name",
+                                                   "required":  true,
+                                                   "minLength":  2,
+                                                   "useDependOn":  true,
+                                                   "dependOn":  "selectedcontact",
+                                                   "dependOnProperty":  "DisplayName"
+                                               },
+                           "type":  "input",
+                           "summaryVisibility":  "Show",
+                           "requiresTemplateOptions":  true,
+                           "requiresKey":  true,
+                           "requiresDataSource":  false
+                       },
+                       {
+                           "key":  "Name",
+                           "templateOptions":  {
+                                                   "label":  "Name",
+                                                   "useDependOn":  true,
+                                                   "dependOn":  "selectedcontact",
+                                                   "dependOnProperty":  "Name"
+                                               },
+                           "type":  "input",
+                           "summaryVisibility":  "Show",
+                           "requiresTemplateOptions":  true,
+                           "requiresKey":  true,
+                           "requiresDataSource":  false
+                       },
+                       {
+                           "key":  "alias",
+                           "templateOptions":  {
+                                                   "label":  "Alias",
+                                                   "useDataSource":  false,
+                                                   "required":  true,
+                                                   "minLength":  2,
+                                                   "useDependOn":  true,
+                                                   "dependOn":  "selectedcontact",
+                                                   "dependOnProperty":  "Alias"
+                                               },
+                           "type":  "input",
+                           "summaryVisibility":  "Show",
+                           "requiresTemplateOptions":  true,
+                           "requiresKey":  true,
+                           "requiresDataSource":  false
+                       },
+                       {
+                           "key":  "firstname",
+                           "templateOptions":  {
+                                                   "label":  "First name",
+                                                   "useDependOn":  true,
+                                                   "dependOn":  "selectedcontact",
+                                                   "dependOnProperty":  "FirstName"
+                                               },
+                           "type":  "input",
+                           "summaryVisibility":  "Show",
+                           "requiresTemplateOptions":  true,
+                           "requiresKey":  true,
+                           "requiresDataSource":  false
+                       },
+                       {
+                           "key":  "initials",
+                           "templateOptions":  {
+                                                   "label":  "Initials",
+                                                   "useDependOn":  true,
+                                                   "dependOn":  "selectedcontact",
+                                                   "dependOnProperty":  "Initials"
+                                               },
+                           "type":  "input",
+                           "summaryVisibility":  "Show",
+                           "requiresTemplateOptions":  true,
+                           "requiresKey":  true,
+                           "requiresDataSource":  false
+                       },
+                       {
+                           "key":  "lastname",
+                           "templateOptions":  {
+                                                   "label":  "Last name",
+                                                   "useDependOn":  true,
+                                                   "dependOn":  "selectedcontact",
+                                                   "dependOnProperty":  "LastName"
+                                               },
+                           "type":  "input",
+                           "summaryVisibility":  "Show",
+                           "requiresTemplateOptions":  true,
+                           "requiresKey":  true,
+                           "requiresDataSource":  false
+                       },
+                       {
+                           "key":  "hidefromaddresslist",
+                           "templateOptions":  {
+                                                   "label":  "Hide from Address Lists",
+                                                   "useSwitch":  true,
+                                                   "checkboxLabel":  "Hide from Address Lists",
+                                                   "useDataSource":  true,
+                                                   "dataSourceConfig":  {
+                                                                            "dataSourceGuid":  "$dataSourceGuid_2",
+                                                                            "input":  {
+                                                                                          "propertyInputs":  [
+                                                                                                                 {
+                                                                                                                     "propertyName":  "hidefromaddresslist",
+                                                                                                                     "otherFieldValue":  {
+                                                                                                                                             "otherFieldKey":  "selectedcontact"
+                                                                                                                                         }
+                                                                                                                 }
+                                                                                                             ]
+                                                                                      }
+                                                                        },
+                                                   "displayField":  "Result"
+                                               },
+                           "type":  "boolean",
+                           "summaryVisibility":  "Show",
+                           "requiresTemplateOptions":  true,
+                           "requiresKey":  true,
+                           "requiresDataSource":  false
+                       }
+                   ]
+    }
+]
